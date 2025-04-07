@@ -1,0 +1,7 @@
+body {
+    margin: 40px 0px;
+    font-family: var(--font-main);
+    color: var(--text-primary); 
+    background-color: var(--gray); 
+  }
+  

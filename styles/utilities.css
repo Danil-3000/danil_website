@@ -1,0 +1,74 @@
+/* ========== COLORS ========== */
+
+
+/* Content */
+.content-primary    { color: var(--black-primary); }
+.content-secondary  { color: var(--black-secondary); }
+.content-tertiary   { color: var(--black-tertiary); }
+
+/* Background */
+.bg-white        { background-color: var(--white); }
+.bg-primary      { background-color: var(--gray); }
+.bg-glossy       { background-color: var(--black-glossy); }
+
+/* Border */
+.border-primary  { border-color: var(--black-ghost); }
+
+/* Accent */
+.bg-accent-violet  { background-color: var(--violet); }
+
+
+/* ========== SPACING ========== */
+
+/* Margin bottom */
+.mb-4    { margin-bottom: 4px; }
+.mb-8    { margin-bottom: 8px; }
+.mb-16   { margin-bottom: 16px; }
+.mb-24   { margin-bottom: 24px; }
+.mb-32   { margin-bottom: 32px; }
+.mb-40   { margin-bottom: 40px; }
+
+/* Padding */
+.p-8     { padding: 8px; }
+.p-16    { padding: 16px; }
+.p-24    { padding: 24px; }
+.px-24   { padding-left: 24px; padding-right: 24px; }
+.py-12   { padding-top: 12px; padding-bottom: 12px; }
+
+/* ========== TYPOGRAPHY ========== */
+
+/* Content */
+.content-40       { font-size: 40px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 120%; /* 48px */
+                    letter-spacing: -0.4px; }
+.content-18       { font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 142%; /* 25.56px */ }
+
+/* UI */
+.ui-20-mono   { font-family: var(--font-mono);
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 110%; /* 22px */ }
+.ui-16-mono   { font-family: var(--font-mono);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 120%; /* 19.2px */
+                letter-spacing: 0.16px; }
+
+/* Header */
+.header-32       {  font-size: 32px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 110%; /* 35.2px */
+                    letter-spacing: -0.64px; }
+.header-24       {  font-size: 24px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 110%; /* 26.4px */
+                    letter-spacing: -0.48px; }

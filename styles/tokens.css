@@ -1,0 +1,18 @@
+:root {
+    /* ===== Fonts ===== */
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  
+    /* ===== Colors: Backgrounds ===== */
+    --gray: #E6E5E1;
+    --white: #FFFFFF;
+    --black-glossy: rgba(0, 0, 0, 0.12);
+    --black-primary: rgba(0, 0, 0, 0.88);
+    --black-secondary: rgba(0, 0, 0, 0.4);
+    --black-tertiary: rgba(0, 0, 0, 0.32);
+    --black-ghost: rgba(0, 0, 0, 0.08);
+    --violet: #6829F0;
+
+    --radius-base: 12px
+  }
+  
