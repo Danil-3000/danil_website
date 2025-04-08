@@ -46,7 +46,8 @@
 .content-18       { font-size: 18px;
                     font-style: normal;
                     font-weight: 400;
-                    line-height: 142%; /* 25.56px */ }
+                    line-height: 142%; /* 25.56px */ 
+                    margin-top: 16px;}
 
 /* UI */
 .ui-20-mono   { font-family: var(--font-mono);
@@ -64,7 +65,7 @@
 /* Header */
 .header-32       {  font-size: 32px;
                     font-style: normal;
-                    font-weight: 600;
+                    font-weight: 500;
                     line-height: 110%; /* 35.2px */
                     letter-spacing: -0.64px; }
 .header-24       {  font-size: 24px;

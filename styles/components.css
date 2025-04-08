@@ -11,7 +11,7 @@
     background-color: var(--white);
     color: var(--black-secondary);
     text-align: center;
-    border-radius: var(--radius-base);
+    border-radius: 12px;
     position: relative;
     display: inline-block;
   }
@@ -89,6 +89,7 @@
     display: inline-block;
     position: relative;
     line-height: 1.2;
+    cursor: pointer;
   }
   
   .underline-svg {
@@ -143,6 +144,7 @@
     padding: 0;
     cursor: pointer;
     transition: color 0.2s ease;
+    text-underline-offset: 2px;
   }
   
   .btn-small:hover {
@@ -174,3 +176,116 @@
     font-weight: 400;
   }
   
+
+  /*MODAL*/
+
+  .modal {
+    position: fixed;
+    inset: 0;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+
+  .modal-inner-wrapper {
+    position: relative;
+    background-color: var(--gray);
+    height: 100%;
+    width: 100%;
+    border-radius: 24px;
+    padding: 32px;
+    box-sizing: border-box;
+    transform: translateY(20px) scale(0.98);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow-y: auto;
+    height: 100%;
+  }
+
+    /* MODAL SCROLLBAR */
+
+    .modal-inner-wrapper::-webkit-scrollbar {
+      width: 12px; /* шире, чтобы дать место для отступа */
+    }
+    
+    .modal-inner-wrapper::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    .modal-inner-wrapper::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 3px;
+    
+      /* вот тут создаём "отступ" визуально */
+      box-shadow: inset 4px 0 0 0 transparent, /* левая часть прозрачная */
+                  inset -4px 0 0 0 #E6E5E1;     /* правая часть совпадает с фоном модалки */
+    }
+  
+  
+  .modal.show {
+    background-color: var(--black-glossy);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal.show .modal-inner-wrapper {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  .modal.closing {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .modal.closing .modal-inner-wrapper {
+    transform: translateY(20px) scale(0.98);
+    opacity: 0;
+  }
+
+  .modal-content {
+    position: relative;
+    padding: 80px 16px;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 100%;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background: var(--black-glossy);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 10;
+  }
+  
+  .modal-close svg {
+    width: 20px;
+    height: 20px;
+    color: var(--black-primary);
+  }
+  
+  .modal-close:hover {
+    background-color: var(--black-tertiary);
+  }
+  
+  .text-block {
+    max-width: 800px;
+    padding: 0 16px;
+    gap: 24px;
+  }
