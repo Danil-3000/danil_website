@@ -65,7 +65,7 @@
 /* Header */
 .header-32       {  font-size: 32px;
                     font-style: normal;
-                    font-weight: 500;
+                    font-weight: 600;
                     line-height: 110%; /* 35.2px */
                     letter-spacing: -0.64px; }
 .header-24       {  font-size: 24px;

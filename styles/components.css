@@ -1,75 +1,94 @@
-.avatar-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Бабл */
-  .avatar-bubble {
-    padding: 12px 16px;
-    margin-bottom: 0;
-    background-color: var(--white);
-    color: var(--black-secondary);
-    text-align: center;
-    border-radius: 12px;
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Хвостик бабла */
-  .avatar-bubble::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 12px;
-    height: 12px;
-    background-color: var(--white);
-    border-radius: 50%;
-  }
-  
-  /* Коннектор */
-  .avatar-connector-circle {
-    width: 6px;
-    height: 6px;
-    background-color: var(--white);
-    border-radius: 50%;
-    margin-top: 10px;
-    margin-bottom: 4px;
-  }
-  
-  /* Аватар */
-  .avatar-wrapper {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    position: relative;
-    display: inline-block;
-  }
-  
-  .avatar-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 50%;
-  }
-  
-  /* Статус */
-  .avatar-status {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 16px;
-    height: 16px;
-    background-color: var(--violet);
-    border-radius: 50%;
-    border: 2px solid var(--gray);
-  }
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+
+  /* создаём визуальный отступ справа от ползунка */
+  box-shadow: inset 4px 0 0 0 transparent,  /* слева — прозрачный */
+              inset -4px 0 0 0 var(--gray); /* справа — фон body */
+}
+
+/* AVATAR */
+
+  .avatar-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    /* Бабл */
+    .avatar-bubble {
+      padding: 12px 16px;
+      margin-bottom: 0;
+      background-color: var(--white);
+      color: var(--black-secondary);
+      text-align: center;
+      border-radius: 12px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    /* Хвостик бабла */
+    .avatar-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      background-color: var(--white);
+      border-radius: 50%;
+    }
+    
+    /* Коннектор */
+    .avatar-connector-circle {
+      width: 6px;
+      height: 6px;
+      background-color: var(--white);
+      border-radius: 50%;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+    
+    /* Аватар */
+    .avatar-wrapper {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 50%;
+    }
+    
+    /* Статус */
+    .avatar-status {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 16px;
+      height: 16px;
+      background-color: var(--violet);
+      border-radius: 50%;
+      border: 2px solid var(--gray);
+    }
   
 
-  /* HERO BLOCK */
+/* HERO BLOCK */
 
   .hero-text {
     margin-top: 40px;
@@ -101,9 +120,9 @@
     pointer-events: none;
   }
   
-  /* BUTTONS */
+/* BUTTONS */
 
-  .btn-row {
+  .btn-row-desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -111,6 +130,26 @@
     margin: 0 auto 80px;
     padding: 0 16px;
     gap: 16px;
+  }
+
+  .btn-row-mobile {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
+  }
+  
+  @media (max-width: 520px) {
+    .btn-row-desktop {
+      display: none;
+    }
+  
+    .btn-row-mobile {
+      display: flex;
+    }
   }
   
   .btn-text {
@@ -151,7 +190,7 @@
     color: var(--black-primary);
   }  
     
-  /* FOOTER */
+/* FOOTER */
 
 
   .footer-divider {
@@ -177,7 +216,7 @@
   }
   
 
-  /*MODAL*/
+/*MODAL*/
 
   .modal {
     position: fixed;
@@ -199,7 +238,7 @@
     height: 100%;
     width: 100%;
     border-radius: 24px;
-    padding: 32px;
+    padding: 16px;
     box-sizing: border-box;
     transform: translateY(20px) scale(0.98);
     opacity: 0;
@@ -249,18 +288,28 @@
     opacity: 0;
   }
 
+  .modal-inner {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
   .modal-content {
     position: relative;
-    padding: 80px 16px;
+    padding: 80px 0px;
     max-width: 100%;
     box-sizing: border-box;
     min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* центрирует по горизонтали */
   }
 
   .modal-close {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 24px;
+    right: 24px;
     width: 36px;
     height: 36px;
     background: var(--black-glossy);
@@ -283,9 +332,149 @@
   .modal-close:hover {
     background-color: var(--black-tertiary);
   }
-  
-  .text-block {
-    max-width: 800px;
-    padding: 0 16px;
-    gap: 24px;
-  }
+
+    /*CONTENT INSIDE MODAL*/
+
+    /*TEXT*/
+
+      .text-block {
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .text-block-header-32 {
+        width: 100%;
+        margin: 0px 0px 16px 0px;  
+      }
+
+      .text-block-header-32-single {
+        width: 100%;
+        margin: 0px 0px 24px 0px;  
+      }
+
+      .text-block-header-24 {
+        width: 100%;
+        margin: 32px 0px 16px 0px;  
+      }
+
+      .text-block-heder-description {
+        width: 100%;
+        margin: 0px 0px 24px 0px;
+      }
+
+      .text-block-paragraph-first {
+        width: 100%;
+        margin: 40px 0px 16px 0px;
+
+      }
+
+      .text-block-paragraph {
+        width: 100%;
+        margin: 16px 0px;
+      }
+
+      .svg-header {
+        display: flex;
+        margin-bottom: 16px; 
+        margin-top: 32px;
+      }
+
+      .svg-bonus {
+        width: 100px;
+        height: auto;
+        display: block;
+      }
+
+    /*IMAGE*/
+
+      .image-block {
+        align-items: center;
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
+
+      .screenshot {
+        max-width: 1000px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .screenshot img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        border: 4px solid var(--black-glossy);
+      }
+
+      .image-description {
+        margin-top: 16px;
+        text-align: center;
+      }
+
+        /*CAROUSEL*/
+        
+        .carousel-wrapper {
+          position: relative;
+          max-width: 800px;
+          margin: 24px auto;
+        }
+
+        .carousel {
+          position: relative;
+          max-width: 800px;
+          aspect-ratio: 16 / 9;
+          overflow: hidden;
+          border-radius: 12px;
+          margin: 24px 0;
+        }
+        
+        .carousel-track {
+          display: flex;
+          transition: transform 0.4s ease;
+          height: 100%;
+          overflow: hidden;
+        }
+        
+        .carousel-track img {
+          flex: 0 0 100%;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          border-radius: 12px;
+        }
+        
+        .carousel-btn {
+          position: absolute;
+          top: 50%;
+          width: 44px;
+          height: 44px;
+          transform: translateY(-50%);
+          background: #1A1A19;
+          color: var(--white);
+          border: none;
+          border-radius: 12px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          z-index: 2;
+          opacity: 0;
+          transition: opacity 0.2s ease;
+        }
+        
+        .carousel-wrapper:hover .carousel-btn {
+          opacity: 1;
+        }
+        
+        .carousel-btn.prev {
+          left: -20px;
+        }
+        
+        .carousel-btn.next {
+          right: -20px;
+        }
