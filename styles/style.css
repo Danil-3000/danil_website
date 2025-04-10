@@ -3,5 +3,6 @@ body {
     font-family: var(--font-main);
     color: var(--text-primary); 
     background-color: var(--gray); 
+    overflow-x: hidden;
   }
   

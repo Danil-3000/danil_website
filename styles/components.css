@@ -245,6 +245,7 @@ body::-webkit-scrollbar-thumb {
     transition: transform 0.3s ease, opacity 0.3s ease;
     overflow-y: auto;
     height: 100%;
+    overflow-x: hidden;
   }
 
     /* MODAL SCROLLBAR */
