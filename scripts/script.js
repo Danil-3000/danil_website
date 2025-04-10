@@ -129,16 +129,15 @@ function enableFullscreenViewer() {
     let currentSlide = startIndex;
   
     function updateImage() {
-        fullscreenImg.src = slides[currentSlide].src;
-        fullscreenImg.alt = slides[currentSlide].alt || '';
-      
-        const prevBtn = fullscreen.querySelector(".prev");
-        const nextBtn = fullscreen.querySelector(".next");
-      
-        // Показываем или скрываем кнопки в зависимости от текущего слайда
-        prevBtn.style.display = currentSlide === 0 ? "none" : "flex";
-        nextBtn.style.display = currentSlide === slides.length - 1 ? "none" : "flex";
-      }
+      fullscreenImg.src = slides[currentSlide].src;
+      fullscreenImg.alt = slides[currentSlide].alt || '';
+  
+      const prevBtn = fullscreen.querySelector(".prev");
+      const nextBtn = fullscreen.querySelector(".next");
+  
+      prevBtn.style.display = currentSlide === 0 ? "none" : "flex";
+      nextBtn.style.display = currentSlide === slides.length - 1 ? "none" : "flex";
+    }
   
     fullscreen.classList.remove("hidden");
     updateImage();
@@ -152,11 +151,11 @@ function enableFullscreenViewer() {
       currentSlide = (currentSlide + 1) % slides.length;
       updateImage();
     };
+  
+    fullscreen.onclick = (e) => {
+      const clickedInside = e.target.closest(".fullscreen-container");
+      if (!clickedInside) {
+        fullscreen.classList.add("hidden");
+      }
+    };
   }
-
-  // Закрытие фуллскрина по клику вне картинки
-document.getElementById("fullscreen-viewer").addEventListener("click", (e) => {
-    if (e.target === e.currentTarget) {
-      e.currentTarget.classList.add("hidden");
-    }
-  });
