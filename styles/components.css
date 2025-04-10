@@ -453,7 +453,7 @@ body::-webkit-scrollbar-thumb {
           width: 44px;
           height: 44px;
           transform: translateY(-50%);
-          background: #1A1A19;
+          background: #2E2E2D;
           color: var(--white);
           border: none;
           border-radius: 12px;
@@ -465,12 +465,19 @@ body::-webkit-scrollbar-thumb {
           z-index: 2;
           opacity: 0;
           transition: opacity 0.2s ease;
+          transform: translateY(-50%);
+          transition: transform 0.2s ease;
         }
         
         .carousel-wrapper:hover .carousel-btn {
           opacity: 1;
         }
         
+        .carousel-btn:hover {
+          transform: translateY(-50%) scale(1.1);
+        }
+
+
         .carousel-btn.prev {
           left: -20px;
         }
@@ -478,3 +485,74 @@ body::-webkit-scrollbar-thumb {
         .carousel-btn.next {
           right: -20px;
         }
+
+          /*FULL SCREEN*/
+
+          .fullscreen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--black-secondary);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+          }
+          
+          .fullscreen.hidden {
+            display: none;
+          }
+          
+          .fullscreen-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            width: 100%;
+            padding-left: 76px; /* 44px кнопка + 32px gap */
+            padding-right: 76px;
+            box-sizing: border-box;
+            position: relative;
+          }
+          
+          .fullscreen-img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 12px;
+            display: block;
+          }
+          
+          .fullscreen-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: var(--black-primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-50%);
+            transition: transform 0.2s ease;
+          }
+          
+          .fullscreen-btn.prev {
+            left: 16px;
+          }
+
+          .fullscreen-btn.next {
+            right: 16px;
+          }
+          
+          .fullscreen-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+          }

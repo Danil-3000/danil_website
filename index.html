@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="styles/utilities.css" />  
   <link rel="stylesheet" href="styles/components.css" /> 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" /> 
+  <script src="scripts/script.js" defer></script> 
 </head>
 <body>
     <main class="flex flex-column items-center justify-center px-24 py-12">
@@ -32,7 +33,7 @@
         <div class="hero-text">
             <p class="hero-text">
                 Привет! Я Данил. Я продуктовый и графический дизайнер. Сейчас я делаю
-                <span class="word-with-underline" data-template="modal-template-wb">
+                <span class="word-with-underline" data-template-url="modal-wb">
                     WB Space
                     <svg class="underline-svg" viewBox="0 0 222 11" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1 9.70906C12.868 9.70906 24.7181 8.99404 36.5921 8.99404C45.3267 8.99404 53.6756 6.50037 62.3327 6.17369C70.6237 5.86082 78.9044 6.05557 87.1995 5.57784C94.9094 5.13382 102.316 3.11833 109.961 2.24108C116.453 1.49606 123.025 1.95948 129.545 1.68496C136.299 1.40055 143.282 0.563517 150.042 1.28773C158.792 2.22521 167.401 3.91232 176.18 4.54503C184.749 5.16268 193.477 4.70393 202.079 4.70393C208.336 4.70393 214.338 5.41895 220.511 5.41895"
@@ -43,7 +44,7 @@
                     </svg>
                   </span>
                    для Wildberries, до этого адаптировал
-                  <span class="word-with-underline">
+                   <span class="word-with-underline" data-template-url="modal-wb">
                     Практикум
                     <svg class="underline-svg" viewBox="0 0 222 11" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.81445 4.6568C15.6267 2.50007 29.7061 0.640546 43.6613 1.9327C48.3407 2.36597 52.9595 2.57025 57.6585 2.57025C65.6465 2.57025 73.7327 1.18618 81.6828 1.55596C85.7924 1.7471 89.4334 3.80828 93.7384 3.49761C97.8205 3.20302 101.713 2.93912 105.823 3.38169C108.991 3.72287 112.978 4.95923 116.053 3.72944C116.915 3.38476 119.577 3.00452 120.458 3.20781C124.115 4.05174 126.801 5.57441 130.717 5.67109C138.164 5.85497 145.605 5.23686 153.031 4.77272C157.48 4.49468 162.862 6.06473 167.086 4.6568C169.74 3.77235 173.393 5.52491 176.244 5.67109C186.645 6.20447 196.363 6.74334 206.818 6.74334"
@@ -54,7 +55,7 @@
                         />
                     </svg>
                   </span> для американского рынка, и сделал для него
-                  <span class="word-with-underline">
+                  <span class="word-with-underline" data-template-url="modal-wb">
                     приложение
                     <svg class="underline-svg" viewBox="0 0 224 11" xmlns="http://www.w3.org/2000/svg" fill="none">
                         <path
@@ -66,7 +67,7 @@
                       </svg>
                     </span>                 
                 </span>. А ещё раньше — делал бренды в
-                <span class="word-with-underline">
+                <span class="word-with-underline" data-template-url="modal-wb">
                     Embacy
                     <svg class="underline-svg" viewBox="0 0 222 11" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -78,7 +79,7 @@
                         />
                       </svg>                                                               
                 </span>. И всёёёё это время я занимаюсь разным
-                <span class="word-with-underline">
+                <span class="word-with-underline" data-template-url="modal-wb">
                     творчеством
                     <svg class="underline-svg" viewBox="0 0 234 8" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -96,7 +97,7 @@
         </div>
       
          <div class="btn-row-desktop">
-            <button class="btn-text">Подробнее</button>
+            <button class="btn-text" data-template-url="modal-contact">Подробнее</button>
           
             <div style="position: absolute; left: 50%; transform: translateX(-50%);">
                 <div style="position: relative; display: inline-block;">
@@ -107,7 +108,7 @@
                           stroke="#6829F0" stroke-width="2.8" stroke-linecap="round"/>
                   </svg>
               
-                  <button class="btn-text" style="position: relative; z-index: 1;" data-template="modal-template-contact">Написать мне</button>
+                  <button class="btn-text" style="position: relative; z-index: 1;" data-template-url="modal-contact">Написать мне</button>
                 </div>
             </div>
               
@@ -115,8 +116,8 @@
           </div>  
 
           <div class="btn-row-mobile">
-            <button class="btn-text">Подробнее</button>
-            <button class="btn-text" data-template="modal-template-contact">Написать мне</button>
+            <button class="btn-text" data-template-url="modal-contact">Подробнее</button>
+            <button class="btn-text" data-template-url="modal-contact">Написать мне</button>
           </div>
 
     </main>   
@@ -133,6 +134,7 @@
 
 
     <div id="modal" class="modal">
+      
       <button class="modal-close" id="modal-close" aria-label="Close">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M14.5 1.5L1.5 14.5M1.5 1.5L14.5 14.5"
@@ -140,8 +142,8 @@
           stroke-linecap="round"
           stroke-linejoin="round"/>
         </svg>
-                             
       </button>
+      
       <div class="modal-inner-wrapper">
         <div class="modal-content">
           <div class="modal-inner" id="modal-inner">
@@ -150,111 +152,56 @@
       </div>
     </div>
 
-    <template id="modal-template-wb">
-      <div class="text-block">
-        <h2 class="text-block-header-32 header-32 content-primary">WB Space</h2>
-        <p class="text-block-heder-description ui-16-mono content-secondary">Product design, May 2024 – May 2025</p>
-        <button class="btn-text">Подробнее</button>
-        <p class="text-block-paragraph-first content-18 content-primary">Cross-functional designer with solid experience in branding and visual-communications with background in architecture. I have master's degree in art direction in HSE University.<br>
-          Worked at several branding agencies developing brand and identity for international tech projects. Currently I am working for the US edtech company: I improve and develop the corporate style and product.<br>
-        </p>
-      </div>
+    <div class="fullscreen-content">
 
-      <div class="image-block">
-        <div class="screenshot">
-          <img src="img/leaderboard.png" alt="screenshot" />
-        </div>
-        <p class="image-description ui-16-mono content-secondary"> description </p>
-      </div>
+      <button class="carousel-btn prev">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.4163 4L6.58301 9.45455L12.4163 14.9091"
+        stroke="#FFFFFF"
+        stroke-width="1.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+        </svg>
+      </button>
 
-      <div class="text-block">
-        <p class="text-block-paragraph content-18 content-primary">Cross-functional designer with solid experience in branding and visual-communications with background in architecture. I have master's degree in art direction in HSE University.<br>
-          Worked at several branding agencies developing brand and identity for international tech projects. Currently I am working for the US edtech company: I improve and develop the corporate style and product.<br>
-          I am passionate about what I do. Mostly I work with Figma. Fluent in Adobe package and Blender 3D. In addition to this, I make electronic music and paint as my hobbies.
-        </p>
-      </div>
-
-      <div class="image-block">
-        <div class="carousel-wrapper">
-          <div class="carousel">
-            <div class="carousel-track">
-              <img src="img/carousel/1.png" alt="Slide 1" />
-              <img src="img/carousel/2.png" alt="Slide 2" />
-              <img src="img/carousel/3.png" alt="Slide 3" />
-            </div>
-          </div>
-          <button class="carousel-btn prev">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.4163 4L6.58301 9.45455L12.4163 14.9091"
-              stroke="#FFFFFF"
-              stroke-width="1.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"/>
-            </svg>              
-          </button>
-          <button class="carousel-btn next">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.58366 4L13.417 9.45455L7.58366 14.9091"
-              stroke="#FFFFFF"
-              stroke-width="1.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"/>
-            </svg>   
-          </button>
-        </div>
-      </div>
-   </template>
-    
-    <template id="modal-template-practicum">
-      <div class="text-block">
-        <h2 class="text-block-title">Практикум</h2>
-        <p class="text-block-meta">США, адаптация контента</p>
-        <div class="text-block-body">
-          <p>Создание мобильного приложения и локализация Практикума под англоязычную аудиторию...</p>
-        </div>
-      </div>
-    </template>
-
-    <template id="modal-template-contact">
-      <div class="text-block">
-        <h2 class="text-block-header-32-single header-32 content-primary">Contacts</h2>
-      </div>
-
-      <div class="text-block">
-        <div class="text-block-paragraph-first">
-          <h2 class="text-block-header-24 header-24 content-primary">Email</h2>
-          <button class="btn-text" onclick="window.location.href='mailto:zabelindanil@gmail.com'">d.zabelin96@gmail.com</button>
-        </div>
-      </div>
-
-      <div class="text-block">
-        <h2 class="text-block-header-24 header-24 content-primary">Telegram</h2>
-        <a href="https://t.me/zabelin96" target="_blank" class="btn-text">t.me/zabelin96</a>
-      </div>
+      <img src="…" class="fullscreen-img" />
       
-      <div class="text-block">
-        <h2 class="text-block-header-24 header-24 content-primary">Instagram</h2>
-        <a href="https://instagram.com/danil__________3" target="_blank" class="btn-text">instagram.com/danil__________3</a>
-      </div>
+      <button class="carousel-btn next">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.58366 4L13.417 9.45455L7.58366 14.9091"
+          stroke="#FFFFFF"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+        </svg>
+      </button>
+      
+    </div>
 
-      <div class="text-block">
-        <div class="svg-header">
-          <svg viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg" class="svg-bonus">
-            <path d="M2.88344 6.17313C3.57353 11.2625 4.50743 16.2824 5.60397 21.3035C6.00946 23.1601 6.0917 25.1801 6.65033 26.9956C6.69451 27.1392 9.72445 23.6951 10.2498 23.2078C11.2061 22.3208 12.6122 21.2928 12.6773 19.8595C12.7421 18.4352 12.6348 16.8428 10.9613 16.3646C9.80429 16.0341 8.61346 15.7148 7.44556 15.3811C6.70532 15.1696 5.0582 15.2207 4.47391 14.7533C3.8819 14.2797 4.61571 14.4894 5.05987 14.3975C7.46626 13.8996 8.94482 12.4917 10.3544 10.5888C11.0214 9.6884 12.5254 7.39608 10.5428 6.63352C7.33369 5.39926 4.4957 5.41975 1 5.41975M22.4707 3.53629C19.1738 6.94123 14.5729 11.5921 17.0715 16.6785C18.234 19.0452 19.811 21.4786 21.3197 23.6473C22.0638 24.717 23.0665 24.8751 24.3541 24.589C26.8059 24.0442 27.5153 20.7308 27.6606 18.7294C28.0254 13.7038 27.6676 6.17311 20.9639 6.17311M34.9013 4.28969C34.6009 9.31628 34.352 14.3198 34.3781 19.3572C34.3863 20.9343 34.1838 23.6027 34.6083 25.3005C34.6839 25.6031 35.1401 26.1697 35.278 26.5143M36.0319 4.66635C39.9903 10.5402 43.6341 16.8862 46.6001 23.3124C48.2351 26.8551 48.0859 23.0644 48.0859 21.3244V3.1596M53.359 3.53631C53.9341 9.15034 54.5321 14.8139 56.1005 20.2571C56.3422 21.096 56.6233 21.4915 57.2096 22.0778C57.4629 22.3311 58.415 23.5971 58.8419 23.3125C59.8546 22.6374 60.5509 20.2718 61.1439 19.2317C63.1265 15.754 63.7504 13.9101 63.99 10.0237C64.1742 7.03483 64.6597 4.0873 64.6597 1.08784C64.6597 0.385026 66.0856 4.10993 66.3129 4.79194C67.1378 7.26672 67.6807 9.77408 68.2801 12.3048C68.5196 13.3161 70.6141 22.7474 71.4401 22.7474M80.1043 5.41974C77.8133 -0.536812 74.8901 5.16316 74.8306 8.43325C74.7955 10.368 74.2996 12.8188 76.4211 13.7069C78.8249 14.7131 81.2864 15.1303 83.7038 15.967C85.735 16.6701 89.8209 20.1087 87.931 22.58C86.5831 24.3427 85.1687 23.4505 83.4945 23.2078C82.0666 23.0009 80.5807 22.9856 79.3509 22.3707"
-            fill="none"
-            stroke="#6829F0"
-            stroke-width="2"
-            stroke-linecap="round"/>
+
+    <div id="fullscreen-viewer" class="fullscreen hidden">
+      <div class="fullscreen-container">
+        <button class="fullscreen-btn prev">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M12.4163 4L6.58301 9.45455L12.4163 14.9091"
+                  stroke="#FFFFFF" stroke-width="1.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </div>
-        <a href="https://t.me/backyard3000" target="_blank" class="btn-text">t.me/backyard3000</a>
+        </button>
+
+          <div class="fullscreen-img-wrapper">
+            <img src="..." alt="Slide" class="fullscreen-img" />
+          </div>
+
+        <button class="fullscreen-btn next">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7.58366 4L13.417 9.45455L7.58366 14.9091"
+                  stroke="#FFFFFF" stroke-width="1.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
-
-    </template>
-
+    </div>
+    
   </body>
-
-
-    <script src="scripts/script.js" defer></script>
-</body>
 </html>
